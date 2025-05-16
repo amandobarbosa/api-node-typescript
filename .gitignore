@@ -21,3 +21,4 @@ dist-ssr
 *.ntvs*
 *.sln
 *.sw?
+*.env
