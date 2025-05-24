@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import { StatusCodes } from "http-status-codes";
-import { AnyObject, Maybe, ObjectSchema, Schema, ValidationError } from "yup";
+import { AnyObject, Maybe, ObjectSchema, ValidationError } from "yup";
 
 type tProperty = "body" | "header" | "params" | "query";
 type TAllSchemas = Record<tProperty, ObjectSchema<any>>;
