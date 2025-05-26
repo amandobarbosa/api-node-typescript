@@ -17,9 +17,10 @@
   },
   "scripts": {
     "dev": "ts-node-dev ./src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js",
     "test": "jest",
-    "postinstall": "tsc",
-    "production": "node ./build/index.js"
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": "16.x || 18.x || 20.x"
