@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CidadesController, PessoasController } from "../controlers";
+import { CidadesController, PessoasController, UsuariosController } from "../controlers";
 
 const router = Router();
 
@@ -56,6 +56,17 @@ router.delete(
   "/pessoas/:id",
   PessoasController.DeleteByIdValidation,
   PessoasController.DeleteById
+);
+
+router.post(
+  "/entrar",
+  UsuariosController.signInValidation,
+  UsuariosController.signIn
+);
+router.post(
+  "/cadastrar",
+  UsuariosController.signUpValidation,
+  UsuariosController.signUp
 );
 
 export { router };
