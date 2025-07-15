@@ -32,7 +32,7 @@ export const getAll = async (
     req.query.filter || "",
     Number(req.query.id)
   );
-  const count = await CidadesProvider.count(req.query.filter);
+  const count = await CidadesProvider.count(req.query.filter);  
 
   if (result instanceof Error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
