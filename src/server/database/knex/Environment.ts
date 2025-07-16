@@ -32,5 +32,19 @@ export const test: Knex.Config = {
   connection: ":memory:",
 };
 export const production: Knex.Config = {
-  ...development,
+  client: "pg",
+  migrations: {
+    directory: path.resolve(__dirname, "..", "migrations"),
+  },
+  seeds: {
+    directory: path.resolve(__dirname, "..", "seeds"),
+  },
+  connection: {
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
+    port: Number(process.env.DATABASE_PORT || 5432),
+    ssl: {rejectUnauthorized: false},
+  },
 };
